@@ -140,3 +140,25 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 (hbnb) ["[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'name': 'Fred the Frog', 'age': 9, 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
 ```
 <br>
+
+# Tasks
+
+### 0. Fork me if you can!
+
+In the industry, you will work on an existing codebase 90% of the time. Your first thoughts upon looking at it might include:
+
+* “Who did this code?”
+* “How it works?”
+* “Where are unittests?”
+* “Where is this?”
+* “Why did they do that like this?”
+* “I don’t understand anything.”
+* “… I will refactor everything…”
+
+### 1. Bug free!
+
+Do you remember the unittest module?
+
+This codebase contains many test cases. Some are missing, but the ones included cover the basic functionality of the program.
+
+
