@@ -10,7 +10,7 @@ from sqlalchemy.ext.declarative import declarative_base
 import uuid
 from os import getenv
 
-time_fmt = "%Y-%m-%dT%H:%M:%S.%f"
+time_fmt = "%Y-%m-%d %H:%M:%S.%f"
 
 if getenv("HBNB_TYPE_STORAGE") == 'db':
     Base = declarative_base()
@@ -65,8 +65,10 @@ class BaseModel:
             new_dict.pop('amenities', None)
         if 'reviews' in new_dict:
             new_dict.pop('reviews', None)
+        if hasattr(self, '_sa_instance_state'):
+            new_dict.pop('_sa_instance_state', None)
         new_dict["__class__"] = self.__class__.__name__
-        new_dict.pop('_sa_instance_state', None)
+
         if not save_to_disk:
             new_dict.pop('password', None)
         return new_dict
