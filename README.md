@@ -161,4 +161,6 @@ Do you remember the unittest module?
 
 This codebase contains many test cases. Some are missing, but the ones included cover the basic functionality of the program.
 
+# Session Basics
+
 
