@@ -36,8 +36,11 @@ class DBStorage:
         database = os.getenv('HBNB_MYSQL_DB')
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'
                                       .format(user, passwd, host, database))
+        Session = sessionmaker(bind=self.__engine)
+        self.__session = Session()
         if os.getenv('HBNB_ENV') == 'test':
             Base.metadata.drop_all(self.__engine)
+
 
     def all(self, cls=None):
         """returns a dictionary of all the objects present"""
