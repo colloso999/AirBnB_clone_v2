@@ -33,3 +33,7 @@ class State(BaseModel, Base):
                 if city.state_id == self.id:
                     list_city.append(city)
             return list_city
+
+# from sqlalchemy import create_engine
+# engine = create_engine('mysql+mysqldb://root:PassWord~Colloso123@localhost/hbnb_dev_db')
+# Base.metadata.create_all(bind=engine)
