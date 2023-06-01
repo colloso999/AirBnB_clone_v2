@@ -3,7 +3,9 @@
 import re
 import cmd
 import sys
+import uuid
 import os
+from datetime import datetime
 from models.base_model import BaseModel
 from models.__init__ import storage
 from models.user import User
@@ -254,12 +256,22 @@ class HBNBCommand(cmd.Cmd):
             if args not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
-            for k, v in storage._FileStorage__objects.items():
-                if k.split('.')[0] == args:
-                    print_list.append(str(v))
+
+            objects = storage.all(args)
+
+            #for k, v in storage.all.items():
+                #if k.split('.')[0] == args:
+                    #print_list.append(str(v))
+            for obj in objects.values():
+                print_list.append(str(obj))
+
         else:
-            for k, v in storage._FileStorage__objects.items():
-                print_list.append(str(v))
+            objects = storage.all()
+            #for k, v in storage.all.items():
+                #print_list.append(str(v))
+
+            for obj in objects.values():
+                print_list.append(str(obj))
 
         print(print_list)
 
