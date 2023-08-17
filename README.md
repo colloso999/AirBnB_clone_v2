@@ -163,4 +163,10 @@ This codebase contains many test cases. Some are missing, but the ones included 
 
 # Session Basics
 
+## Tasks
 
+###  Number template
+
+* Write a script that starts a Flask web application:
+* /number_template/<n>: display a HTML page only if n is an integer:
+H1 tag: “Number: n” inside the tag BODY
